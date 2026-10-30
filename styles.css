@@ -2191,6 +2191,44 @@ body {
     font-size: 0.95rem;
 }
 
+/* Validation Error Styles (Matching User Reference) */
+.form-input-wrap.has-error .form-text-input {
+    border-color: #e53935 !important;
+    background-color: #fff6f6 !important;
+    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.14) !important;
+}
+
+.form-input-wrap.has-error .form-input-icon {
+    color: #e53935 !important;
+}
+
+.form-error-msg {
+    display: none;
+    color: #d32f2f;
+    font-family: 'Hind', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 600;
+    margin-top: 6px;
+    padding-left: 4px;
+    line-height: 1.35;
+    animation: errorFadeIn 0.2s ease;
+}
+
+.form-input-wrap.has-error + .form-error-msg {
+    display: block;
+}
+
+@keyframes errorFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Submit Button */
 .btn-place-order {
     width: 100%;
