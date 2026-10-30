@@ -583,15 +583,14 @@
                     </div>
 
                     <!-- Form -->
-                    <form class="order-main-form" id="main-order-form"
-                        onsubmit="event.preventDefault(); alert('धन्यवाद! आपका ऑर्डर प्राप्त हो गया है। हमारी टीम जल्द ही आपसे संपर्क करेगी।');">
+                    <form class="order-main-form" id="main-order-form" novalidate>
 
                         <div class="form-group-item">
                             <label class="form-field-label">माता-पिता / अभिभावक का नाम</label>
                             <div class="form-input-wrap" id="name-input-wrap">
                                 <i class="fa-regular fa-user form-input-icon"></i>
                                 <input type="text" name="parent_name" id="parent-name-input" class="form-text-input"
-                                    placeholder="Enter Your Name">
+                                    placeholder="Enter Your Name" required minlength="2">
                             </div>
                             <div class="form-error-msg" id="name-error">कृपया अपना नाम दर्ज करें</div>
                         </div>
@@ -601,7 +600,8 @@
                             <div class="form-input-wrap" id="phone-input-wrap">
                                 <i class="fa-solid fa-phone form-input-icon"></i>
                                 <input type="tel" name="phone_number" id="phone-input" class="form-text-input"
-                                    placeholder="Enter Mobile Number" maxlength="10" inputmode="numeric">
+                                    placeholder="Enter Mobile Number" maxlength="10" inputmode="numeric"
+                                    pattern="[6-9][0-9]{9}" required>
                             </div>
                             <div class="form-error-msg" id="phone-error">कृपया 6-9 से शुरू होने वाला 10 अंकों का मान्य मोबाइल नंबर दर्ज करें</div>
                         </div>
@@ -841,7 +841,7 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 
 </html>
