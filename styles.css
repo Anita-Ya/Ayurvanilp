@@ -2564,3 +2564,210 @@ body {
     line-height: 1.45;
     margin: 0;
 }
+
+/* ==========================================================================
+   ORDER CONFIRMATION THANK YOU MODAL (MATCHING REFERENCE WITH BRAND COLORS)
+   ========================================================================== */
+
+.order-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 35, 18, 0.78);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.order-modal-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.order-modal-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 385px;
+    border-radius: 26px;
+    padding: 32px 22px 26px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(15, 35, 18, 0.38),
+                0 6px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    transform: scale(0.88) translateY(24px);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+.order-modal-backdrop.is-open .order-modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.order-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid #ebe5db;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #777777;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.order-modal-close:hover {
+    background: #f4efe8;
+    color: var(--brand-green-dark);
+    transform: rotate(90deg);
+}
+
+.modal-check-circle {
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--brand-green-light);
+    border: 2px solid #bce3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 7px rgba(37, 94, 42, 0.08);
+}
+
+.modal-check-circle i {
+    color: var(--brand-green);
+    font-size: 32px;
+}
+
+.modal-pill-badge {
+    display: inline-block;
+    padding: 5px 18px;
+    border-radius: 50px;
+    background: rgba(37, 94, 42, 0.08);
+    border: 1.5px solid rgba(37, 94, 42, 0.28);
+    color: var(--brand-green-dark);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 12px;
+}
+
+.modal-title {
+    font-family: 'Poppins', 'Hind', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #1f2a1b;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.modal-title #modal-customer-name {
+    color: var(--brand-gold);
+    font-weight: 800;
+}
+
+.modal-subtitle {
+    font-family: 'Hind', sans-serif;
+    font-size: 0.92rem;
+    color: #555555;
+    line-height: 1.45;
+    margin-bottom: 18px;
+}
+
+.modal-subtitle strong {
+    color: var(--brand-green-dark);
+    font-weight: 700;
+}
+
+.modal-summary-box {
+    background: #fbf9f5;
+    border: 1.5px solid #ece5dc;
+    border-radius: 16px;
+    padding: 12px 18px;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.modal-summary-box .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    font-family: 'Poppins', 'Hind', sans-serif;
+    border-bottom: 1px dashed #dcd5ca;
+    font-size: 0.88rem;
+}
+
+.modal-summary-box .summary-row:last-child {
+    border-bottom: none;
+}
+
+.modal-summary-box .summary-label {
+    color: #666666;
+    font-weight: 500;
+}
+
+.modal-summary-box .summary-val {
+    color: #1f2a1b;
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+.modal-summary-box .val-delivery {
+    color: #255e2a;
+    font-weight: 800;
+}
+
+.modal-reassurance-text {
+    font-family: 'Hind', sans-serif;
+    font-size: 0.82rem;
+    color: #777777;
+    line-height: 1.45;
+    margin-bottom: 20px;
+}
+
+.modal-btn-confirm {
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, var(--brand-green-dark) 0%, var(--brand-green) 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Poppins', 'Hind', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(25, 56, 29, 0.32);
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.modal-btn-confirm:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(25, 56, 29, 0.42);
+}
+
+.modal-btn-confirm:active {
+    transform: translateY(0);
+}

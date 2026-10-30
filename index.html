@@ -18,7 +18,7 @@
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=4">
 </head>
 
 <body>
@@ -841,7 +841,54 @@
 
     </div>
 
-    <script src="script.js?v=3"></script>
+    <!-- Order Confirmation Thank You Modal (Matching Reference) -->
+    <div class="order-modal-backdrop" id="order-thankyou-modal" role="dialog" aria-modal="true" aria-labelledby="modal-customer-name" aria-hidden="true">
+        <div class="order-modal-card">
+            <button type="button" class="order-modal-close" id="modal-close-btn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Top Circular Checkmark Badge -->
+            <div class="modal-check-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <!-- Pill Badge -->
+            <div class="modal-pill-badge">Order Confirmed!</div>
+
+            <!-- Headline with Customer Name -->
+            <h3 class="modal-title">बधाई हो, <span id="modal-customer-name">अभिभावक</span>!</h3>
+            
+            <!-- Subtitle -->
+            <p class="modal-subtitle">आपके लिए <strong>AyurVani</strong> का ऑर्डर सफलतापूर्वक स्वीकार कर लिया गया है।</p>
+
+            <!-- Summary Details Card -->
+            <div class="modal-summary-box">
+                <div class="summary-row">
+                    <span class="summary-label">Order ID:</span>
+                    <span class="summary-val" id="modal-order-id">AV-629219</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Mobile:</span>
+                    <span class="summary-val" id="modal-customer-phone">+91 9676788880</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Delivery:</span>
+                    <span class="summary-val val-delivery">FREE Express Delivery</span>
+                </div>
+            </div>
+
+            <!-- Reassurance Text -->
+            <p class="modal-reassurance-text">हमारे विशेषज्ञ जल्द ही डिलीवरी कन्फर्मेशन के लिए आपसे संपर्क करेंगे।</p>
+
+            <!-- Confirmation Action Button -->
+            <button type="button" class="modal-btn-confirm" id="modal-confirm-btn">
+                <span>धन्यवाद, ठीक है</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js?v=4"></script>
 </body>
 
 </html>

@@ -162,6 +162,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // =========================================================================
+    // Thank You Modal Controller (Matching Reference Design with Brand Palette)
+    // =========================================================================
+    const thankYouModal = document.getElementById('order-thankyou-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+    const modalCustomerName = document.getElementById('modal-customer-name');
+    const modalCustomerPhone = document.getElementById('modal-customer-phone');
+    const modalOrderId = document.getElementById('modal-order-id');
+
+    function openThankYouModal(name, phone) {
+        if (!thankYouModal) return;
+
+        // Generate dynamic 6-digit Order ID (e.g. AV-629219)
+        const randomNum = Math.floor(100000 + Math.random() * 900000);
+        if (modalOrderId) modalOrderId.textContent = `AV-${randomNum}`;
+        if (modalCustomerName) modalCustomerName.textContent = name.trim() || 'अभिभावक';
+        if (modalCustomerPhone) modalCustomerPhone.textContent = `+91 ${phone.trim()}`;
+
+        thankYouModal.classList.add('is-open');
+        thankYouModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeThankYouModal() {
+        if (!thankYouModal) return;
+
+        thankYouModal.classList.remove('is-open');
+        thankYouModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+
+        if (orderForm) {
+            orderForm.reset();
+        }
+        if (nameWrap) nameWrap.classList.remove('has-error');
+        if (phoneWrap) phoneWrap.classList.remove('has-error');
+    }
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeThankYouModal);
+    }
+
+    if (modalConfirmBtn) {
+        modalConfirmBtn.addEventListener('click', closeThankYouModal);
+    }
+
+    if (thankYouModal) {
+        thankYouModal.addEventListener('click', (e) => {
+            if (e.target === thankYouModal) {
+                closeThankYouModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && thankYouModal.classList.contains('is-open')) {
+                closeThankYouModal();
+            }
+        });
+    }
+
     if (orderForm) {
         orderForm.removeAttribute('onsubmit');
         orderForm.addEventListener('submit', function (e) {
@@ -180,10 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            alert('धन्यवाद! आपका ऑर्डर स्वीकार कर लिया गया है। हमारी टीम जल्द ही आपसे संपर्क करेगी।');
-            orderForm.reset();
-            if (nameWrap) nameWrap.classList.remove('has-error');
-            if (phoneWrap) phoneWrap.classList.remove('has-error');
+            const submittedName = nameInput.value.trim();
+            const submittedPhone = phoneInput.value.trim();
+
+            // Open custom branded Thank You Modal instead of browser alert
+            openThankYouModal(submittedName, submittedPhone);
         });
     }
 });
