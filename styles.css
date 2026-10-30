@@ -1520,7 +1520,7 @@ body {
 
 /* Connection Points List */
 .connection-points-list {
-    padding: 20px 18px;
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -1529,24 +1529,28 @@ body {
 .connection-item {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed var(--brand-border);
+    gap: 14px;
+    padding: 8px 18px 8px 8px;
+    background: #eaf2e8;
+    border: 1.5px solid #d0e5ce;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(25, 56, 29, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.connection-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.connection-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(25, 56, 29, 0.12);
 }
 
 .conn-img-box {
-    width: 62px;
-    height: 62px;
+    width: 74px;
+    height: 74px;
     flex-shrink: 0;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid var(--brand-gold);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--brand-green);
+    box-shadow: 0 4px 10px rgba(25, 56, 29, 0.18);
     background: #ffffff;
 }
 
@@ -1559,35 +1563,35 @@ body {
 
 .conn-text-box {
     flex: 1;
+    padding-right: 6px;
 }
 
 .conn-desc {
     font-family: 'Hind', sans-serif;
-    font-size: 0.96rem;
-    color: #2b3a27;
-    line-height: 1.5;
-    font-weight: 500;
+    font-size: 1.06rem;
+    color: var(--brand-green-dark);
+    line-height: 1.42;
+    font-weight: 700;
 }
 
 .connection-highlight-item {
-    background: var(--brand-green-light);
-    padding: 12px 14px;
-    border-radius: 14px;
-    border: 1.5px solid #cbe3c3;
+    background: linear-gradient(135deg, #dcecd9 0%, #cee6cb 100%);
+    border: 2px solid var(--brand-green);
+    box-shadow: 0 5px 16px rgba(37, 94, 42, 0.18);
     margin-top: 4px;
 }
 
 .connection-highlight-item .conn-img-box {
-    border: 2.5px solid var(--brand-green);
-    box-shadow: 0 4px 12px rgba(37, 94, 42, 0.2);
+    border: 3.5px solid var(--brand-green-dark);
+    box-shadow: 0 4px 14px rgba(25, 56, 29, 0.25);
 }
 
 .conn-desc-bold {
     font-family: 'Hind', sans-serif;
-    font-size: 1.02rem;
-    font-weight: 700;
-    color: var(--brand-green);
-    line-height: 1.45;
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: var(--brand-green-dark);
+    line-height: 1.42;
 }
 
 /* ==========================================================================
@@ -1913,6 +1917,20 @@ body {
 .section-quality-trust .sec-header {
     text-align: center;
     margin-bottom: 34px;
+}
+
+.section-quality-trust .quality-trust-title {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.section-quality-trust .quality-trust-title .title-brown,
+.section-quality-trust .quality-trust-title .title-green {
+    display: inline-block !important;
+    white-space: nowrap;
 }
 
 .section-quality-trust .quality-trust-title .title-brown {
