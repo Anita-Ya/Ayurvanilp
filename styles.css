@@ -13,7 +13,7 @@
     --brand-green-text: #bce3b8;    /* Master Subtitle text on dark green */
     
     --brand-brown: #d29114;         /* Rich Golden Yellow for light backgrounds (matches banner & CTA) */
-    --brand-yellow: #f5c842;        /* Radiant Bright Yellow for dark backgrounds & CTA */
+    --brand-yellow: #d29114;        /* Unified Master Golden Yellow across entire LP */
     --brand-gold: #d29114;          /* Master Gold/Yellow */
     
     --brand-offwhite: #faf7f2;      /* Master Ayurvedic Off-White for all light sections & body */
@@ -251,7 +251,7 @@ body {
 .badge-dot {
     width: 11px;
     height: 11px;
-    background: #f5c842;
+    background: #d29114;
     border-radius: 50%;
     display: inline-block;
 }
@@ -449,14 +449,14 @@ body {
     align-self: flex-start;
     font-size: 0.85rem;
     font-weight: 800;
-    color: #ffffff;
-    background: #b57002;
+    color: var(--brand-green-dark);
+    background: linear-gradient(135deg, #df9b19 0%, #c4830c 100%);
     border: none;
     padding: 4px 12px;
     border-radius: 12px;
     margin-bottom: 8px;
     letter-spacing: 0.3px;
-    box-shadow: 0 2px 6px rgba(181, 112, 2, 0.35);
+    box-shadow: 0 2px 6px rgba(210, 145, 20, 0.35);
 }
 
 .flow-card.card-right .card-tag {
@@ -512,7 +512,7 @@ body {
 }
 
 .caution-icon {
-    color: #b57002;
+    color: #d29114;
     font-size: 1.2rem;
     margin-top: 2px;
     flex-shrink: 0;
@@ -766,15 +766,15 @@ body {
 .product-info-points-bottom .text-badge-pill {
     display: inline-block;
     font-weight: 800;
-    color: #ffffff;
-    background: #b57002;
+    color: var(--brand-green-dark);
+    background: linear-gradient(135deg, #df9b19 0%, #c4830c 100%);
     border: none;
-    padding: 3px 12px;
-    border-radius: 8px;
+    padding: 3px 14px;
+    border-radius: 16px;
     margin-top: 4px;
     font-size: 1.06rem;
     letter-spacing: 0.2px;
-    box-shadow: 0 2px 6px rgba(181, 112, 2, 0.35);
+    box-shadow: 0 3px 8px rgba(210, 145, 20, 0.35);
 }
 
 /* Responsive adjustments */
@@ -1011,7 +1011,7 @@ body {
 }
 
 .focus-item-card:hover .item-label {
-    color: #b57002;
+    color: #d29114;
 }
 
 /* Responsive queries */
@@ -1105,7 +1105,7 @@ body {
     font-family: 'Poppins', serif;
     font-size: 1.12rem;
     font-weight: 700;
-    color: #f5c842;
+    color: #d29114;
     line-height: 1.25;
     letter-spacing: 0.2px;
 }
@@ -1123,7 +1123,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: linear-gradient(135deg, #f5c842 0%, #d49a24 100%);
+    background: linear-gradient(135deg, #df9b19 0%, #c4830c 100%);
     color: var(--brand-green-dark);
     padding: 10px 22px;
     border-radius: 26px;
@@ -1131,14 +1131,14 @@ body {
     font-family: 'Poppins', 'Hind', sans-serif;
     font-size: 1.02rem;
     font-weight: 800;
-    box-shadow: 0 4px 14px rgba(245, 200, 66, 0.4);
+    box-shadow: 0 4px 14px rgba(210, 145, 20, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     flex-shrink: 0;
 }
 
 .btn-sticky-order:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(245, 200, 66, 0.55);
+    box-shadow: 0 6px 18px rgba(210, 145, 20, 0.55);
 }
 
 .btn-sticky-order:active {
@@ -1803,7 +1803,7 @@ body {
 
 .section-key-ingredients .ingredients-main-title .title-brown,
 .section-key-ingredients .title-brown {
-    color: #f5c842 !important;
+    color: #d29114 !important;
 }
 
 .section-key-ingredients .ingredients-main-title .title-green,
@@ -1979,7 +1979,7 @@ body {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #f5c842 0%, #d49a24 100%);
+    background: linear-gradient(135deg, #df9b19 0%, #c4830c 100%);
     color: var(--brand-green-dark);
     font-family: 'Poppins', sans-serif;
     font-size: 0.68rem;
@@ -1987,7 +1987,7 @@ body {
     letter-spacing: 0.6px;
     padding: 3px 14px;
     border-radius: 20px;
-    box-shadow: 0 3px 8px rgba(212, 154, 36, 0.35);
+    box-shadow: 0 3px 8px rgba(210, 145, 20, 0.35);
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -2349,7 +2349,7 @@ body {
     transform: translateX(-50%);
     width: 44px;
     height: 11px;
-    background: #b57002;
+    background: linear-gradient(135deg, #df9b19 0%, #c4830c 100%);
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
     opacity: 0.95;
@@ -2386,7 +2386,7 @@ body {
 }
 
 .review-stars {
-    color: #b57002;
+    color: #d29114;
     font-size: 0.95rem;
     margin-bottom: 7px;
     letter-spacing: 2.5px;
